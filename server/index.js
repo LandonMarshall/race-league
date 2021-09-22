@@ -23,6 +23,7 @@ app.get("/api", (req, res) => {
 });
 
 require("../routes/user.routes")(app);
+require("../routes/season.routes")(app);
 require("../routes/team.routes")(app);
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {

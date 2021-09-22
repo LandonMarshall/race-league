@@ -12,7 +12,10 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.DATE,
       field: 'end_time'
     },
-  }, {underscored: true});
+  }, {
+    underscored: true,
+    timestamps: false,
+  });
 
   return Season;
 };

@@ -11,14 +11,11 @@ exports.create = (req, res) => {
     });
     return;
   }
-
-  // Create a Team
-  const team = {
-    name: req.body.name,
-  };
-
   // Save Team in the database
-  Team.create(team)
+  Team.create({
+    name: req.body.name,
+    season_id: req.body.season_id,
+  })
     .then(data => {
       res.send(data);
     })
