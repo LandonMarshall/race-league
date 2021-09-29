@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { addUsers, getUsers } from "api/users-api";
-import { Grid, OutlinedInput, FormControl, InputLabel } from '@material-ui/core';
+import { Grid, Input, FormControl, InputLabel } from '@material-ui/core';
 
-import Header from "components/Header/Header.component";
 import CustomTable from "components/CustomTable/CustomTable.component";
 import ModalWrapper from "components/ModalWrapper/ModalWrapper.component";
 
@@ -38,7 +37,7 @@ const Users = () => {
           <ModalWrapper submitFunction = {handleAddUser} buttonText = "Add User">
           <FormControl fullWidth>
             <InputLabel>Name</InputLabel>
-            <OutlinedInput label="Name" onChange={(event) => setUsersName(event.target.value)} ></OutlinedInput>
+            <Input variant="outlined" label="Name" onChange={(event) => setUsersName(event.target.value)} ></Input>
           </FormControl>
           </ModalWrapper>
         </Grid>
