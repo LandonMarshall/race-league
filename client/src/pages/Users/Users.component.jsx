@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { addUsers, getUsers } from "api/users-api";
-import { Grid, OutlinedInput, FormControl, InputLabel } from '@mui/material';
+import { Grid, OutlinedInput, FormControl, InputLabel } from '@material-ui/core';
 
 import Header from "components/Header/Header.component";
 import CustomTable from "components/CustomTable/CustomTable.component";
 import ModalWrapper from "components/ModalWrapper/ModalWrapper.component";
 
-const Admin = () => {
+const Users = () => {
   const [users, setUsers] = useState([]);
   const [usersName, setUsersName] = useState("");
   const columns = [
@@ -30,7 +30,6 @@ const Admin = () => {
   }, [])
   return (
     <>
-      <Header />
       <Grid container spacing={2}>
         <Grid item xs={8}>
             <CustomTable data={users} columns={columns} />
@@ -48,4 +47,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Users;

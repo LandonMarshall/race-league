@@ -13,12 +13,12 @@ exports.create = (req, res) => {
       return;
     }
   
-    // Create a User
+    // Create a Season
     const season = {
       name: req.body.name,
     };
   
-    // Save User in the database
+    // Save Season in the database
     Season.create(season)
       .then(data => {
         res.send(data);
@@ -48,6 +48,7 @@ exports.findAll = (req, res) => {
     });
 };
 
+// Retrieve all teams for a given season
 exports.getTeams = (req, res) => {
   const id = req.params.id;
   Season.findAll({

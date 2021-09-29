@@ -25,6 +25,8 @@ app.get("/api", (req, res) => {
 require("../routes/user.routes")(app);
 require("../routes/season.routes")(app);
 require("../routes/team.routes")(app);
+require("../routes/race.routes")(app);
+
 // All other GET requests not handled before will return our React app
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));

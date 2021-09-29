@@ -1,23 +1,46 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
 import "./global.css";
-import { ThemeProvider } from '@mui/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 
-import theme from './theme';
-import Admin from "./pages/Admin/Admin.component";
+import raceTheme from "theme";
+import Users from "pages/Users/Users.component";
+import Teams from "pages/Teams/Teams.component";
+import Header from "components/Header/Header.component";
+import { getSeasons } from "api/seasons-api";
 
 const App = () => {
+  const [seasons, setSeasons] = useState([]);
+  const [selectedSeason, setSelectedSeason] = useState();
+
+  const handleSeasonSelect = (event, value) => {
+    setSelectedSeason(event.target.value)
+  };
+
+  useEffect(() => {
+    getSeasons().then((response) => {
+      setSeasons(response.data);
+      // TODO: For now, set selected season to the last created one
+      //  eventually, find current season based on time
+      setSelectedSeason(response.data[response.data.length - 1]['id']);
+    })
+  }, [])
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={raceTheme}>
+      <Header seasons={seasons} selectedSeason={selectedSeason} setCurrentSeason={handleSeasonSelect}/>
       <Router>
           <Switch>
-            <Route path="/admin">
-              <Admin />
+            <Route path="/users">
+              <Users />
             </Route>
+            <Route path="/teams">
+              <Teams />
+            </Route> 
             <Route path="/race/:id">
               <div>
                 WIP

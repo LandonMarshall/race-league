@@ -1,7 +1,8 @@
-import { createTheme } from '@mui/material/styles';
-const defaultTheme = createTheme();
+import { createMuiTheme } from '@material-ui/core/styles';
 
-const theme = createTheme({
+const defaultTheme = createMuiTheme();
+
+const raceTheme = createMuiTheme({
   palette: {
     primary: {
       main: '#0b49da',
@@ -79,36 +80,10 @@ const theme = createTheme({
           borderBottomStyle: 'none',
         },
       },
-      root: {
-        borderRadius: 8,
-        [defaultTheme.breakpoints.up('md')]: {
-          fontSize: 14,
-        },
-      },
-    },
-    MuiOutlinedInput: {
-      root: {
-        borderRadius: 8,
-        [defaultTheme.breakpoints.up('md')]: {
-          fontSize: 14,
-        },
-      },
-    },
-    MuiInputLabel: {
-      root: {
-        [defaultTheme.breakpoints.up('md')]: {
-          fontSize: 14,
-        },
-      },
     },
     MuiButton: {
       root: {
         borderRadius: 8,
-      },
-      label: {
-        [defaultTheme.breakpoints.up('md')]: {
-          fontSize: 14,
-        },
       },
     },
     MuiCard: {
@@ -126,4 +101,4 @@ const theme = createTheme({
   },
 });
 
-export default theme;
+export default raceTheme;

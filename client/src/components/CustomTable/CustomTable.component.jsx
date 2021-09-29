@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, TableBody,TableCell, TableContainer,
-  TableHead, TableRow, Paper } from '@mui/material';
+  TableHead, TableRow, Paper } from '@material-ui/core';
 
 import { useStyles } from './CustomTable.styles';
 

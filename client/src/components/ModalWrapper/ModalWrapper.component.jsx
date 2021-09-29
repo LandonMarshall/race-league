@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText,
-  DialogTitle  } from '@mui/material';
+  DialogTitle  } from '@material-ui/core';
 
 const ModalWrapper = (props) => {
   const { children, title, submitFunction, buttonText } = props;

@@ -3,6 +3,9 @@ module.exports = (sequelize, Sequelize) => {
     name: {
       type: Sequelize.STRING,
     },
+    track: {
+      type: Sequelize.STRING,
+    },
     start_time: {
       type: Sequelize.DATE,
     },
